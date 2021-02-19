@@ -1,14 +1,17 @@
-#include <bits/stdc++.h> 
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <utility>
+#include <algorithm>
   
 struct hash_pair { 
     template <class T1, class T2> 
-    size_t operator()(const std::pair<T1, T2>& p) const
-    { 
+    size_t operator()(const std::pair<T1, T2>& p) const { 
         auto hash1 = std::hash<T1>{}(p.first);
         auto hash2 = std::hash<T2>{}(p.second);
-        return hash1 ^ hash2; 
+        return hash1 ^ hash2;
     } 
-}; 
+};
 
 int maxPointOnSameLine(std::vector<std::pair<int, int>> points) {
     int N = points.size();
